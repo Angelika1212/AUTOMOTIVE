@@ -8,13 +8,19 @@ class Wheel {
      int rotation;
      int diameter;
      int profile;
+     int speedIndex;
+     int loadIndex;
      std::string vendor;
 
      public:
-     Wheel(float pressure, int temperature, int rotation, int diameter, int profile, std::string vendor)
+     Wheel() = default;
+
+     Wheel(float pressure, int temperature, int rotation, int diameter, int profile, 
+      int speedIndex, int loadIndex, std::string vendor)
         : pressure(pressure), temperature(temperature), 
           rotation(rotation), diameter(diameter), 
-          profile(profile), vendor(vendor) {};
+          profile(profile), speedIndex(speedIndex),
+          loadIndex(loadIndex), vendor(vendor) {};
 
      float getPressure() const {
         return pressure;
@@ -43,8 +49,8 @@ class Wheel {
 };
 
 int main() {
-    Wheel w(2, 30, 0, 18, 3, "Any");
-    std::cout << "Pressure " << w.getPressure() << " Pa";
+    Wheel w();
+    std::cout << "Created wheel";
 
     return 0;
 }
