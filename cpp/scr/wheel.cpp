@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <wheel.h>
 
 class Wheel {
     private:
@@ -45,12 +46,4 @@ class Wheel {
      const std::string& getVendor() const {
         return vendor;
      }
-
 };
-
-int main() {
-    Wheel w();
-    std::cout << "Created wheel";
-
-    return 0;
-}
